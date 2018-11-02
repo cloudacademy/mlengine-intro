@@ -13,7 +13,7 @@ pip install --user --upgrade virtualenv
 virtualenv mlenv
 source mlenv/bin/activate
 pip install --user --upgrade tensorflow
-sudo -H pip install pandas
+pip install pandas
 ```
 
 ```
