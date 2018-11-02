@@ -43,7 +43,7 @@ gcloud ml-engine jobs submit training job1 \
 ```
 
 ### Feature Engineering
-Google's original sample code: https://github.com/GoogleCloudPlatform/cloudml-samples/archive/master.zip
+Google's original sample code: https://github.com/GoogleCloudPlatform/cloudml-samples/tree/master/census
 
 ```
 cd ../census/estimator
