@@ -6,8 +6,8 @@ TensorFlow website: https://www.tensorflow.org
 TensorFlow installation: https://www.tensorflow.org/install  
 
 ```
-python -V
-python3 -V
+python -V       # Check which version of Python 2 is installed
+python3 -V      # Check which version of Python 3 is installed
 pip install --user --upgrade pip
 pip install --user --upgrade virtualenv
 virtualenv mlenv
