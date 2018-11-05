@@ -35,7 +35,7 @@ BUCKET=gs://[ProjectID]-ml  # Replace [ProjectID] with your Google Cloud Project
 REGION=[Region]  # Replace [Region] with a Google Cloud Platform region, such as us-central1  
 ```
 ```
-gcloud ml-engine jobs submit training job1 \
+gcloud ml-engine jobs submit training iris1 \
     --module-name trainer.iris \
     --package-path trainer \
     --staging-bucket $BUCKET \
