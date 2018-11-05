@@ -39,8 +39,8 @@ gcloud ml-engine jobs submit training job1 \
     --module-name trainer.iris \
     --package-path trainer \
     --staging-bucket $BUCKET \
-    --region $REGION
-    --runtime-version 1.8 \
+    --region $REGION \
+    --runtime-version 1.8
 ```
 
 ### Feature Engineering
