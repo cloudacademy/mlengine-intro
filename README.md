@@ -40,6 +40,7 @@ gcloud ml-engine jobs submit training job1 \
     --package-path trainer \
     --staging-bucket $BUCKET \
     --region $REGION
+    --runtime-version 1.8 \
 ```
 
 ### Feature Engineering
