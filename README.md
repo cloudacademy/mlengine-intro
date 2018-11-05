@@ -12,7 +12,7 @@ pip install --user --upgrade pip
 pip install --user --upgrade virtualenv
 virtualenv mlenv
 source mlenv/bin/activate
-pip install --user --upgrade tensorflow
+pip install tensorflow
 pip install pandas
 ```
 
