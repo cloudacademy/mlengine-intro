@@ -91,7 +91,7 @@ gcloud ml-engine jobs submit training $JOB \
     --scale-tier STANDARD_1 \
     -- \
     --train-files $TRAIN_DATA \
-    --eval-files $EVAL_DATA \
+    --eval-files $EVAL_DATA
 ```
 
 ### Deploying a Model on ML Engine
