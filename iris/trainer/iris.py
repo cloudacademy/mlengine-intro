@@ -116,8 +116,6 @@ def main():
 
 
 if __name__ == "__main__":
-  import logging
-  logger = tf.get_logger()
-  logger.setLevel(logging.ERROR)
   os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+  tf.logging.set_verbosity(tf.logging.ERROR)
   main()
