@@ -12,7 +12,7 @@ pip install --user --upgrade pip
 pip install --user --upgrade virtualenv
 virtualenv mlenv
 source mlenv/bin/activate
-pip install tensorflow
+pip install tensorflow==1.10
 pip install pandas
 ```
 
@@ -27,7 +27,7 @@ Google Cloud SDK installation: https://cloud.google.com/sdk
 
 ```
 cd ..
-gcloud ml-engine local train --module-name trainer.iris --package-path trainer
+gcloud ai-platform local train --module-name trainer.iris --package-path trainer
 ```
 
 ```
@@ -35,12 +35,12 @@ BUCKET=gs://[ProjectID]-ml  # Replace [ProjectID] with your Google Cloud Project
 REGION=[Region]  # Replace [Region] with a Google Cloud Platform region, such as us-central1  
 ```
 ```
-gcloud ml-engine jobs submit training iris1 \
+gcloud ai-platform jobs submit training iris1 \
     --module-name trainer.iris \
     --package-path trainer \
     --staging-bucket $BUCKET \
     --region $REGION \
-    --runtime-version 1.8
+    --runtime-version 1.10
 ```
 
 ### Feature Engineering
@@ -51,7 +51,7 @@ cd ../census/estimator
 ```
 
 ```
-gcloud ml-engine local train \
+gcloud ai-platform local train \
     --module-name trainer.task \
     --package-path trainer \
     -- \
@@ -62,7 +62,7 @@ gcloud ml-engine local train \
 
 ### A Wide and Deep Model
 ```
-gcloud ml-engine local train \
+gcloud ai-platform local train \
     --module-name trainer.task \
     --package-path trainer \
     -- \
@@ -82,9 +82,9 @@ JOB=census1
 ```
 
 ```
-gcloud ml-engine jobs submit training $JOB \
+gcloud ai-platform jobs submit training $JOB \
     --job-dir $BUCKET/$JOB \
-    --runtime-version 1.8 \
+    --runtime-version 1.10 \
     --module-name trainer.task \
     --package-path trainer \
     --region $REGION \
@@ -96,18 +96,18 @@ gcloud ml-engine jobs submit training $JOB \
 
 ### Deploying a Model on ML Engine
 ```
-gcloud ml-engine models create census --regions=$REGION  
+gcloud ai-platform models create census --regions=$REGION  
 gsutil ls -r $BUCKET/census1/export  
 ```
 ```
 # Note: Replace [Path-to-model] below with your Cloud Storage path
-gcloud ml-engine versions create v1 \
+gcloud ai-platform versions create v1 \
     --model census \
-    --runtime-version 1.8 \
+    --runtime-version 1.10 \
     --origin [Path-to-model]
 ```
 ```
-gcloud ml-engine predict \
+gcloud ai-platform predict \
     --model census \
     --version v1 \
     --json-instances \
@@ -115,4 +115,4 @@ gcloud ml-engine predict \
 ```
 
 ### Conclusion
-Cloud Machine Learning Engine documentation: https://cloud.google.com/ml-engine/docs  
+Cloud Machine Learning Engine documentation: https://cloud.google.com/ai-platform/docs  
